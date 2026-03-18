@@ -30,4 +30,4 @@ To make it to the next cup of coffee.
 
 ## Challenges
 
-Sleep. Paradoxically related to motivation — a micro-example of my meta-experience.
+Sleep. Paradoxically related to motivation.
