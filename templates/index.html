@@ -28,7 +28,7 @@
       --tx-3:       #B7B5AC;
       --tx-2:       #6F6E69;
       --tx:         #100F0F;
-      --cyan:       #24837B;
+      --cyan:       #205EA6;
       --hover-link: #AF3029;
       --logo-color: #100F0F;
     }
@@ -156,6 +156,15 @@
       line-height: 0;
     }
     .tent-link:hover { opacity: 0.55; }
+
+    .tent-link:hover svg path,
+    .tent-link:hover svg polygon,
+    .tent-link:hover svg line,
+    .tent-link:hover svg rect,
+    .tent-link:hover svg ellipse {
+      fill: var(--red);
+      stroke: var(--red);
+    }
 
     @keyframes fade {
       from { opacity: 0; transform: translateY(8px); }
