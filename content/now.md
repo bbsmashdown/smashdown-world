@@ -17,16 +17,15 @@ youtube: https://www.youtube.com/watch?v=z5rRZdiu1UE
 
 ## Reading
 
-### Blood Meridian
-author: Cormac McCarthy
-- Whatever in creation exists without my knowledge exists without my consent.
+### VIgil
+author: George Saunders
 
-### Surely You're Joking, Mr. Feynman
-author: Richard Feynman
+### The Score
+author: C. Thi Nguyen
 
 ## Motivation
 
-To make it to the next cup of coffee.
+To make it to the next cup of coffee (and/or tea).
 
 ## Challenges
 

@@ -1,13 +1,7 @@
 ---
-title: Wife
+title: Buri
 updated: March 2026
 ---
-
-## Quote
-
-> "She contains multitudes."
->
-> — after Walt Whitman
 
 ## Listening
 
@@ -17,14 +11,10 @@ youtube: https://www.youtube.com/watch?v=NzxW8nxgENA
 
 ## Reading
 
-### Braiding Sweetgrass
-author: Robin Wall Kimmerer
-- To be native to a place we must learn to speak its language.
+### Blood Meridian
+author: Cormac McCarthy
+- Whatever in creation exists without my knowledge exists without my consent.
 
 ## Motivation
 
 To maintain a long term belay partner. 
-
-## Challenges
-
-Keeping up.
