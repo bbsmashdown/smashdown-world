@@ -155,15 +155,9 @@
       text-decoration: none;
       line-height: 0;
     }
-    .tent-link:hover { opacity: 0.55; }
-
-    .tent-link:hover svg path,
-    .tent-link:hover svg polygon,
-    .tent-link:hover svg line,
-    .tent-link:hover svg rect,
-    .tent-link:hover svg ellipse {
-      fill: var(--red);
-      stroke: var(--red);
+    .tent-link:hover {
+      opacity: 0.6;
+      filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
     }
 
     @keyframes fade {
