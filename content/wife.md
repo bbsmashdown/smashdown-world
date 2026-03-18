@@ -11,9 +11,9 @@ updated: March 2026
 
 ## Listening
 
-artist: Gillian Welch
-track: Everything Is Free
-youtube: https://www.youtube.com/watch?v=TWQSsEAh2uY
+artist: Vulfpeck
+track: LAX
+youtube: https://www.youtube.com/watch?v=NzxW8nxgENA
 
 ## Reading
 
