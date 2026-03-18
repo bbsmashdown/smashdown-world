@@ -23,7 +23,7 @@ author: Robin Wall Kimmerer
 
 ## Motivation
 
-To be worthy of her confidence.
+To maintain a long term belay partner. 
 
 ## Challenges
 
