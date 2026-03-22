@@ -116,9 +116,9 @@
     }
     .nav-link-item:hover { color: var(--hover-link); }
 
-    .nav-dropdown:hover .dropdown-menu { display: block; }
-    .nav-dropdown:hover .nav-chevron { transform: rotate(90deg); color: var(--tx-2); }
-    .nav-dropdown:hover .nav-link { color: var(--hover-link); }
+    .nav-dropdown.open .dropdown-menu { display: block; }
+    .nav-dropdown.open .nav-chevron { transform: rotate(90deg); color: var(--tx-2); }
+    .nav-dropdown.open .nav-link { color: var(--tx-2); }
 
     .theme-toggle {
       position: relative; width: 44px; height: 24px;
@@ -289,6 +289,23 @@
       html.dataset.theme = t;
       toggle.checked     = t === 'light';
       localStorage.setItem('sw-theme', t);
+    }
+
+    // Dropdown — click to open, click anywhere else to close
+    const dropdown = document.querySelector('.nav-dropdown');
+    if (dropdown) {
+      dropdown.querySelector('.nav-link').addEventListener('click', function(e) {
+        const menu = dropdown.querySelector('.dropdown-menu');
+        if (menu) {
+          e.preventDefault();
+          dropdown.classList.toggle('open');
+        }
+      });
+      document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+        }
+      });
     }
   </script>
 
