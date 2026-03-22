@@ -124,14 +124,18 @@
     .dropdown-menu {
       display: none;
       position: absolute;
-      /* extend top padding to bridge the gap so mouse doesn't leave hover zone */
       top: 100%;
       padding-top: 0.5rem;
       right: 0;
       background: transparent;
       border: none;
       min-width: 80px;
-      z-index: 100;
+      z-index: 200;
+      pointer-events: none;
+    }
+
+    .dropdown-menu a {
+      pointer-events: auto;
     }
     .dropdown-item {
       display: block;
