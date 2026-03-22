@@ -303,21 +303,40 @@
       localStorage.setItem('sw-theme', t);
     }
 
-    // Dropdown — chevron button toggles menu, now link navigates normally
+    // Dropdown — hover on desktop, chevron tap on mobile
     const dropdown = document.querySelector('.nav-dropdown');
     if (dropdown) {
       const chevronBtn = dropdown.querySelector('.nav-chevron-btn');
       const menu       = dropdown.querySelector('.dropdown-menu');
+      let closeTimer   = null;
 
+      if (menu) {
+        // Desktop: open on mouseenter, close on mouseleave with small delay
+        dropdown.addEventListener('mouseenter', function() {
+          clearTimeout(closeTimer);
+          dropdown.classList.add('open');
+        });
+        dropdown.addEventListener('mouseleave', function() {
+          closeTimer = setTimeout(function() {
+            dropdown.classList.remove('open');
+          }, 300);
+        });
+        // Keep open if mouse enters the menu itself
+        menu.addEventListener('mouseenter', function() {
+          clearTimeout(closeTimer);
+        });
+        menu.addEventListener('mouseleave', function() {
+          closeTimer = setTimeout(function() {
+            dropdown.classList.remove('open');
+          }, 300);
+        });
+      }
+
+      // Mobile: chevron tap toggles
       if (chevronBtn && menu) {
         chevronBtn.addEventListener('click', function(e) {
           e.stopPropagation();
           dropdown.classList.toggle('open');
-        });
-        document.addEventListener('click', function(e) {
-          if (!dropdown.contains(e.target)) {
-            dropdown.classList.remove('open');
-          }
         });
       }
     }
