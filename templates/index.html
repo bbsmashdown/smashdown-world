@@ -55,10 +55,18 @@
       animation: fade 0.4s ease both;
     }
 
+    .nav-right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+    }
+
     .nav-dropdown {
       position: relative;
       display: flex;
       align-items: center;
+      z-index: 200;
     }
 
     .nav-link {
@@ -103,7 +111,7 @@
       border: none;
       padding: 0.5rem 0 0.2rem 0;
       min-width: max-content;
-      z-index: 100;
+      z-index: 200;
     }
 
 
@@ -226,6 +234,7 @@
 <body>
 
   <nav>
+    <div class="nav-right">
     {{nav}}
     <label class="theme-toggle" title="Toggle light/dark">
       <input type="checkbox" id="themeToggle">
@@ -251,6 +260,7 @@
         </span>
       </span>
     </label>
+    </div>
   </nav>
 
   <div class="center">
