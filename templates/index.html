@@ -106,15 +106,8 @@
       z-index: 100;
     }
 
-    .dropdown-menu::before {
-      content: '';
-      position: absolute;
-      top: -0.5rem;
-      left: 0; right: 0;
-      height: 0.5rem;
-    }
 
-    .nav-link-item {
+    .dropdown-item {
       display: block;
       font-family: 'iA Writer Mono S', monospace;
       font-size: 0.72rem;
@@ -126,7 +119,7 @@
       transition: color 0.15s;
       white-space: nowrap;
     }
-    .nav-link-item:hover { color: var(--hover-link); }
+    .dropdown-item:hover { color: var(--hover-link); }
 
     .nav-dropdown.open .dropdown-menu { display: block; }
     .nav-dropdown.open .nav-chevron { transform: rotate(90deg); color: var(--tx-2); }

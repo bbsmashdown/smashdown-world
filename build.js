@@ -272,7 +272,7 @@ function buildIndex(allFiles) {
 
   const dropdownItems = pages
     .filter(p => p !== 'now')
-    .map(p => `<a href="/${p}.html" class="nav-link-item">${p}</a>`)
+    .map(p => `<a href="/${p}.html" class="dropdown-item">${p}</a>`)
     .join('\n          ');
 
   let navHtml;
