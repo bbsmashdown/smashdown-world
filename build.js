@@ -192,7 +192,7 @@ function buildNav(files, currentPage) {
   }
 
   return `<div class="nav-dropdown">
-        <a href="/now.html" class="nav-link${nowActive}">now <span class="nav-chevron">›</span></a>
+        <a href="/now.html" class="nav-link${nowActive}">now</a><button class="nav-chevron-btn" aria-label="more pages"><span class="nav-chevron">›</span></button>
         <div class="dropdown-menu">
           ${dropdownItems}
         </div>
@@ -280,7 +280,7 @@ function buildIndex(allFiles) {
     navHtml = `<a class="nav-link" href="/now.html">now</a>`;
   } else {
     navHtml = `<div class="nav-dropdown">
-        <a href="/now.html" class="nav-link">now <span class="nav-chevron">›</span></a>
+        <a href="/now.html" class="nav-link">now</a><button class="nav-chevron-btn" aria-label="more pages"><span class="nav-chevron">›</span></button>
         <div class="dropdown-menu">
           ${dropdownItems}
         </div>

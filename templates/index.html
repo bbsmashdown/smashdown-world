@@ -74,6 +74,17 @@
     }
     .nav-link:hover { color: var(--hover-link); }
 
+    .nav-chevron-btn {
+      background: none;
+      border: none;
+      padding: 0 0 0 0.15rem;
+      margin: 0;
+      cursor: pointer;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+    }
+
     .nav-chevron {
       font-size: 0.65rem;
       color: var(--tx-3);
@@ -81,6 +92,7 @@
       display: inline-block;
       line-height: 1;
     }
+    .nav-chevron-btn:hover .nav-chevron { color: var(--tx-2); }
 
     .dropdown-menu {
       display: none;
@@ -291,21 +303,23 @@
       localStorage.setItem('sw-theme', t);
     }
 
-    // Dropdown — click to open, click anywhere else to close
+    // Dropdown — chevron button toggles menu, now link navigates normally
     const dropdown = document.querySelector('.nav-dropdown');
     if (dropdown) {
-      dropdown.querySelector('.nav-link').addEventListener('click', function(e) {
-        const menu = dropdown.querySelector('.dropdown-menu');
-        if (menu) {
-          e.preventDefault();
+      const chevronBtn = dropdown.querySelector('.nav-chevron-btn');
+      const menu       = dropdown.querySelector('.dropdown-menu');
+
+      if (chevronBtn && menu) {
+        chevronBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
           dropdown.classList.toggle('open');
-        }
-      });
-      document.addEventListener('click', function(e) {
-        if (!dropdown.contains(e.target)) {
-          dropdown.classList.remove('open');
-        }
-      });
+        });
+        document.addEventListener('click', function(e) {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+          }
+        });
+      }
     }
   </script>
 
