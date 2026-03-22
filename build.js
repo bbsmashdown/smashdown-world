@@ -61,7 +61,6 @@ function renderQuote(raw) {
 // ── Render plain paragraph(s) ─────────────────────────────────────────────────
 function renderParagraph(raw) {
   if (!raw) return '';
-  // Support multiple paragraphs separated by blank lines
   return raw
     .split(/\n\n+/)
     .map(p => `<p>${p.replace(/\n/g, ' ').trim()}</p>`)
@@ -121,12 +120,6 @@ function renderListening(raw) {
 }
 
 // ── Render reading section → book list ────────────────────────────────────────
-//
-// Format:
-//   ### Book Title
-//   author: Author Name
-//   - Optional pull quote
-//
 function renderReading(raw) {
   if (!raw) return '';
   const lines = raw.split('\n');
@@ -159,23 +152,63 @@ function renderReading(raw) {
 }
 
 // ── Smart section renderers ───────────────────────────────────────────────────
-// These section names get special treatment. Everything else is plain paragraphs.
 const SMART = {
   'quote':     renderQuote,
   'listening': renderListening,
   'reading':   renderReading,
 };
 
+// ── Build nav dropdown HTML from page list ────────────────────────────────────
+// 'now' is the trigger — clicking goes to now.html, hovering reveals all pages.
+// Pages are sorted: now first, then alphabetical, excluding index.
+function buildNav(files, currentPage) {
+  const pages = files
+    .map(f => {
+      const raw  = fs.readFileSync(`./content/${f}`, 'utf8');
+      const data = parseFile(raw);
+      return { name: path.basename(f, '.md'), hidden: data.hidden === 'true' };
+    })
+    .filter(p => p.name !== 'index' && !p.hidden)
+    .map(p => p.name);
+
+  // Sort: now first, then alphabetical
+  pages.sort((a, b) => {
+    if (a === 'now') return -1;
+    if (b === 'now') return 1;
+    return a.localeCompare(b);
+  });
+
+  // Dropdown items — all pages except 'now' (now is the trigger link itself)
+  const dropdownItems = pages
+    .filter(p => p !== 'now')
+    .map(p => `<a href="/${p}.html" class="dropdown-item${currentPage === p ? ' active' : ''}">${p}</a>`)
+    .join('\n          ');
+
+  const nowActive = currentPage === 'now' ? ' active' : '';
+
+  // If only one page (now), no dropdown needed
+  if (pages.length <= 1 || dropdownItems === '') {
+    return `<a href="/now.html" class="nav-link${nowActive}">now</a>`;
+  }
+
+  return `<div class="nav-dropdown">
+        <a href="/now.html" class="nav-link${nowActive}">now <span class="nav-chevron">›</span></a>
+        <div class="dropdown-menu">
+          ${dropdownItems}
+        </div>
+      </div>`;
+}
+
 // ── Build a single content page ───────────────────────────────────────────────
-function buildPage(filename) {
+function buildPage(filename, allFiles) {
   const raw      = fs.readFileSync(`./content/${filename}`, 'utf8');
   const data     = parseFile(raw);
   const pageName = path.basename(filename, '.md');
 
-  // Collect all ## sections in document order
-  const lines    = raw.split('\n');
-  const ordered  = [];
-  let inFront    = false;
+  // Collect sections in document order
+  const lines   = raw.split('\n');
+  const ordered = [];
+  let inFront   = false;
 
   for (let i = 0; i < lines.length; i++) {
     if (lines[i].trim() === '---') { inFront = !inFront; continue; }
@@ -184,17 +217,14 @@ function buildPage(filename) {
     if (m) ordered.push(m[1].trim().toLowerCase());
   }
 
-  // Build section HTML, skipping any that are empty
+  // Build section HTML
   let sectionsHtml = '';
   for (const key of ordered) {
     const raw = data[key];
     if (!raw) continue;
-
     const renderer = SMART[key] || renderParagraph;
     const content  = renderer(raw);
     if (!content) continue;
-
-    // Add divider between sections
     if (sectionsHtml) sectionsHtml += '\n    <hr>\n';
     sectionsHtml += `
     <section>
@@ -208,24 +238,61 @@ function buildPage(filename) {
   html = html.replaceAll('{{page}}',     pageName);
   html = html.replaceAll('{{updated}}',  data.updated || '');
   html = html.replace('{{sections}}',   sectionsHtml);
+  html = html.replace('{{nav}}',        buildNav(allFiles, pageName));
 
-  const outName = pageName === 'index' ? 'index.html' : `${pageName}.html`;
+  const outName = `${pageName}.html`;
   fs.writeFileSync(`./dist/${outName}`, html);
   console.log(`✓ built ${outName}`);
 }
 
 // ── Build all pages ───────────────────────────────────────────────────────────
 const files = fs.readdirSync('./content').filter(f => f.endsWith('.md'));
-files.forEach(buildPage);
+files.forEach(f => buildPage(f, files));
 console.log(`\n✓ done — ${files.length} page(s) built into /dist`);
 
-// ── Also build index.html from its own template ───────────────────────────────
-function buildIndex() {
+// ── Build index.html ──────────────────────────────────────────────────────────
+function buildIndex(allFiles) {
   const tmpl    = fs.readFileSync('./templates/index.html', 'utf8');
   const updated = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
-  const html    = tmpl.replaceAll('{{updated}}', updated);
+
+  // Build nav links for index (no active state)
+  const pages = allFiles
+    .map(f => {
+      const raw  = fs.readFileSync(`./content/${f}`, 'utf8');
+      const data = parseFile(raw);
+      return { name: path.basename(f, '.md'), hidden: data.hidden === 'true' };
+    })
+    .filter(p => p.name !== 'index' && !p.hidden)
+    .map(p => p.name)
+    .sort((a, b) => {
+      if (a === 'now') return -1;
+      if (b === 'now') return 1;
+      return a.localeCompare(b);
+    });
+
+  const dropdownItems = pages
+    .filter(p => p !== 'now')
+    .map(p => `<a href="/${p}.html" class="nav-link-item">${p}</a>`)
+    .join('\n          ');
+
+  let navHtml;
+  if (pages.length <= 1 || dropdownItems === '') {
+    navHtml = `<a class="nav-link" href="/now.html">now</a>`;
+  } else {
+    navHtml = `<div class="nav-dropdown">
+        <a href="/now.html" class="nav-link">now <span class="nav-chevron">›</span></a>
+        <div class="dropdown-menu">
+          ${dropdownItems}
+        </div>
+      </div>`;
+  }
+
+  let html = tmpl
+    .replaceAll('{{updated}}', updated)
+    .replace('{{nav}}', navHtml);
+
   fs.writeFileSync('./dist/index.html', html);
   console.log('✓ built index.html');
 }
 
-buildIndex();
+buildIndex(files);

@@ -82,6 +82,62 @@
     .bc-sep { color: var(--ui-3); margin: 0 0.4rem; }
     .bc-page { color: var(--tx-3); letter-spacing: 0.02em; }
 
+    /* ── Nav right + dropdown ── */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+    }
+    .nav-dropdown { position: relative; display: flex; align-items: center; }
+    .nav-link {
+      font-family: 'iA Writer Mono S', monospace;
+      font-size: 0.75rem;
+      color: var(--tx-3);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+    .nav-link:hover { color: var(--tx-2); }
+    .nav-link.active { color: var(--accent-subtitle); }
+    .nav-chevron {
+      font-size: 0.65rem;
+      color: var(--tx-3);
+      transition: color 0.15s, transform 0.2s;
+      display: inline-block;
+      line-height: 1;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 0.6rem);
+      right: 0;
+      background: var(--bg-2);
+      border: 1px solid var(--ui-2);
+      border-radius: 3px;
+      padding: 0.4rem 0;
+      min-width: 100px;
+      z-index: 100;
+    }
+    .dropdown-item {
+      display: block;
+      font-family: 'iA Writer Mono S', monospace;
+      font-size: 0.72rem;
+      color: var(--tx-3);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      padding: 0.35rem 0.8rem;
+      transition: color 0.15s, background 0.15s;
+      white-space: nowrap;
+    }
+    .dropdown-item:hover { color: var(--tx); background: var(--ui); }
+    .dropdown-item.active { color: var(--accent-subtitle); }
+    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .nav-dropdown:hover .nav-chevron { transform: rotate(90deg); color: var(--tx-2); }
+    .nav-dropdown:hover .nav-link { color: var(--tx-2); }
+
     /* ── Toggle ── */
     .theme-toggle {
       position: relative;
@@ -188,8 +244,8 @@
       transition: background 0.4s, box-shadow 0.4s, border-color 0.4s;
     }
     .turntable:hover .tt-led {
-      background: #879A39; border-color: #2dd325;
-      box-shadow: 0 0 8px 2px rgba(135,154,57,0.9);
+      background: #879A39; border-color: #879A39;
+      box-shadow: 0 0 5px rgba(135,154,57,0.8);
     }
     .tt-console {
       border-top: 1px solid #DAD8CE; padding: 4px 7px;
@@ -278,7 +334,9 @@
         <span class="bc-sep">/</span>
         <span class="bc-page">{{page}}</span>
       </div>
-      <label class="theme-toggle" title="Toggle light/dark">
+      <div class="nav-right">
+        {{nav}}
+        <label class="theme-toggle" title="Toggle light/dark">
         <input type="checkbox" id="themeToggle">
         <span class="toggle-track"></span>
         <span class="toggle-thumb">
@@ -302,6 +360,7 @@
           </span>
         </span>
       </label>
+      </div>
     </nav>
 
     <header>

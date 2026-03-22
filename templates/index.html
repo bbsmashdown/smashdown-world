@@ -28,7 +28,7 @@
       --tx-3:       #B7B5AC;
       --tx-2:       #6F6E69;
       --tx:         #100F0F;
-      --cyan:       #205EA6;
+      --cyan:       #24837B;
       --hover-link: #AF3029;
       --logo-color: #100F0F;
     }
@@ -55,6 +55,12 @@
       animation: fade 0.4s ease both;
     }
 
+    .nav-dropdown {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
     .nav-link {
       font-family: 'iA Writer Mono S', monospace;
       font-size: 0.75rem;
@@ -62,8 +68,49 @@
       text-decoration: none;
       letter-spacing: 0.05em;
       transition: color 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
     }
     .nav-link:hover { color: var(--hover-link); }
+
+    .nav-chevron {
+      font-size: 0.65rem;
+      color: var(--tx-3);
+      transition: color 0.15s, transform 0.2s;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 0.6rem);
+      right: 0;
+      background: var(--bg-2, #1C1B1A);
+      border: 1px solid var(--ui-2, #343331);
+      border-radius: 3px;
+      padding: 0.4rem 0;
+      min-width: 100px;
+      z-index: 100;
+    }
+
+    .nav-link-item {
+      display: block;
+      font-family: 'iA Writer Mono S', monospace;
+      font-size: 0.72rem;
+      color: var(--tx-3);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      padding: 0.35rem 0.8rem;
+      transition: color 0.15s, background 0.15s;
+      white-space: nowrap;
+    }
+    .nav-link-item:hover { color: var(--tx); background: var(--ui); }
+
+    .nav-dropdown:hover .dropdown-menu { display: block; }
+    .nav-dropdown:hover .nav-chevron { transform: rotate(90deg); color: var(--tx-2); }
+    .nav-dropdown:hover .nav-link { color: var(--hover-link); }
 
     .theme-toggle {
       position: relative; width: 44px; height: 24px;
@@ -155,10 +202,7 @@
       text-decoration: none;
       line-height: 0;
     }
-    .tent-link:hover {
-      opacity: 0.42;
-      filter: invert(20%) sepia(60%) saturate(1200%) hue-rotate(346deg) brightness(90%) contrast(95%);
-    }
+    .tent-link:hover { opacity: 0.55; }
 
     @keyframes fade {
       from { opacity: 0; transform: translateY(8px); }
@@ -169,7 +213,7 @@
 <body>
 
   <nav>
-    <a class="nav-link" href="/now.html">now</a>
+    {{nav}}
     <label class="theme-toggle" title="Toggle light/dark">
       <input type="checkbox" id="themeToggle">
       <span class="toggle-track"></span>
@@ -204,12 +248,12 @@
     </svg>
     <h1>Smashdown World</h1>
     </div>
-    <p class="subtitle">There are many people, few Smashdowns.</p>
+    <p class="subtitle">There are many people, few Smashdowns</p>
     <p class="updated">Updated {{updated}}</p>
   </div>
 
   <!-- secret tent → wife page -->
-  <a class="tent-link" href="/buri.html" title="">
+  <a class="tent-link" href="/wife.html" title="">
     <svg width="32" height="26" viewBox="0 0 64 52" fill="none">
       <ellipse cx="32" cy="48" rx="28" ry="3.5" fill="var(--logo-color)" opacity="0.15"/>
       <polygon points="32,2 4,42 32,42" fill="var(--logo-color)" opacity="0.45"/>
