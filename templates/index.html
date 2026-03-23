@@ -232,7 +232,10 @@
       text-decoration: none;
       line-height: 0;
     }
-    .tent-link:hover { opacity: 0.55; }
+    .tent-link:hover { 
+      opacity: 0.4; 
+      filter: invert(20%) sepia(60%) saturate(1200%) hue-rotate(346deg) brightness(90%) contrast(95%);
+    }
 
     @keyframes fade {
       from { opacity: 0; transform: translateY(8px); }
