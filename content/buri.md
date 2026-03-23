@@ -1,7 +1,7 @@
 ---
 title: Buri
 updated: March 2026
-hidden: false
+hidden: true
 ---
 
 ## Listening
