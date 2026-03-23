@@ -211,7 +211,7 @@
     hr { border: none; border-top: 1px solid var(--ui-2); margin: 2.2rem 0; transition: border-color 0.2s; }
 
     /* ── Sections ── */
-    section { animation: fade 0.4s ease both; }
+    .content { animation: fade 0.4s ease both; }
     section:nth-child(1) { animation-delay: 0.10s; }
     section:nth-child(2) { animation-delay: 0.15s; }
     section:nth-child(3) { animation-delay: 0.20s; }
@@ -343,20 +343,21 @@
     }
     .section-rule { border: none; border-top: 1px solid var(--ui-2); margin: 1rem 0; }
     /* ── Markdown content styles ── */
-    section h1 { font-size: 1.6rem; font-weight: 400; color: var(--tx); letter-spacing: -0.02em; margin: 1.4rem 0 0.5rem; line-height: 1.2; }
-    section h2 { font-size: 1.25rem; font-weight: 400; color: var(--tx); letter-spacing: -0.01em; margin: 1.2rem 0 0.4rem; }
-    section h3 { font-family: 'iA Writer Mono S', monospace; font-size: 0.82rem; font-weight: 400; color: var(--tx-2); text-transform: uppercase; letter-spacing: 0.1em; margin: 1rem 0 0.3rem; }
-    section h4 { font-family: 'iA Writer Mono S', monospace; font-size: 0.75rem; color: var(--tx-3); letter-spacing: 0.08em; margin: 0.8rem 0 0.25rem; }
-    section ul, section ol { padding-left: 1.4rem; margin: 0.5rem 0; }
-    section li { margin-bottom: 0.25rem; line-height: 1.65; }
-    section ol { list-style: decimal; }
-    section ul { list-style: disc; }
-    section a { color: var(--accent-subtitle); text-decoration: underline; text-decoration-color: var(--ui-3); text-underline-offset: 3px; transition: color 0.15s; }
-    section a:hover { color: var(--hover-home); }
-    section strong { font-weight: 600; color: var(--tx); }
-    section em { font-style: italic; }
-    section code { font-family: 'iA Writer Mono S', monospace; font-size: 0.82em; background: var(--ui); padding: 0.1em 0.35em; border-radius: 3px; color: var(--tx-2); }
-    section hr { border: none; border-top: 1px solid var(--ui-2); margin: 1.5rem 0; }
+    .content p { margin-bottom: 1rem; }
+    .content h1 { font-size: 1.6rem; font-weight: 400; color: var(--tx); letter-spacing: -0.02em; margin: 1.4rem 0 0.5rem; line-height: 1.2; }
+    .content h2 { font-size: 1.25rem; font-weight: 400; color: var(--tx); letter-spacing: -0.01em; margin: 1.2rem 0 0.4rem; }
+    .content h3 { font-family: 'iA Writer Mono S', monospace; font-size: 0.82rem; font-weight: 400; color: var(--tx-2); text-transform: uppercase; letter-spacing: 0.1em; margin: 1rem 0 0.3rem; }
+    .content h4 { font-family: 'iA Writer Mono S', monospace; font-size: 0.75rem; color: var(--tx-3); letter-spacing: 0.08em; margin: 0.8rem 0 0.25rem; }
+    .content ul, .content ol { padding-left: 1.4rem; margin: 0.5rem 0; }
+    .content li { margin-bottom: 0.25rem; line-height: 1.65; }
+    .content ol { list-style: decimal; }
+    .content ul { list-style: disc; }
+    .content a { color: var(--accent-subtitle); text-decoration: underline; text-decoration-color: var(--ui-3); text-underline-offset: 3px; transition: color 0.15s; }
+    .content a:hover { color: var(--hover-home); }
+    .content strong { font-weight: 600; color: var(--tx); }
+    .content em { font-style: italic; }
+    .content code { font-family: 'iA Writer Mono S', monospace; font-size: 0.82em; background: var(--ui); padding: 0.1em 0.35em; border-radius: 3px; color: var(--tx-2); }
+    .content hr { border: none; border-top: 1px solid var(--ui-2); margin: 1.5rem 0; }
 
     /* ── Footer ── */
     footer {
@@ -423,7 +424,7 @@
 
     <hr>
 
-    {{sections}}
+    <div class="content">{{content}}</div>
 
     <footer>
       <a href="/" class="footer-logo" title="Smashdown World">

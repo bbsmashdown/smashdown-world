@@ -11,17 +11,20 @@ updated: March 2026
 
 ## Listening
 
+```listening
 artist: Beastie Boys
 track: Sabotage
 youtube: https://www.youtube.com/watch?v=z5rRZdiu1UE
+```
 
 ## Reading
-
+```reading
 ### VIgil
 author: George Saunders
 
 ### The Score
 author: C. Thi Nguyen
+```
 
 ## Motivation
 
