@@ -1,1 +1,1 @@
-{ "name": "smashdown-world", "version": "1.0.0" }
+{"name":"smashdown-world","version":"1.0.0","dependencies":{"marked":"^17.0.5"}}

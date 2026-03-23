@@ -2,8 +2,22 @@
 // Reads .md files from /content, builds into /dist using /templates/page.html
 // Run locally: node build.js
 
-const fs   = require('fs');
-const path = require('path');
+const fs     = require('fs');
+const path   = require('path');
+const { marked, Renderer } = require('marked');
+
+// ── Custom marked renderer ────────────────────────────────────────────────────
+// External links open in new tab, internal links stay in same tab
+const renderer = new Renderer();
+renderer.link = function({ href, title, tokens }) {
+  const text     = tokens.map(t => t.raw).join('');
+  const isExt    = href && (href.startsWith('http://') || href.startsWith('https://'));
+  const titleStr = title ? ` title="${title}"` : '';
+  const target   = isExt ? ' target="_blank" rel="noopener"' : '';
+  return `<a href="${href}"${titleStr}${target}>${text}</a>`;
+};
+
+marked.setOptions({ renderer, breaks: true, gfm: true });
 
 if (!fs.existsSync('./dist')) fs.mkdirSync('./dist');
 
@@ -43,31 +57,29 @@ function parseFile(raw) {
   return data;
 }
 
-// ── Render blockquote section ─────────────────────────────────────────────────
+// ── Render blockquote section — uses marked, extracts attribution line ────────
 function renderQuote(raw) {
   if (!raw) return '';
-  const lines      = raw.split('\n');
-  const quoteLines = lines
-    .filter(l => l.startsWith('>'))
-    .map(l => l.replace(/^>\s?/, '').trim())
-    .filter(l => l && !l.match(/^[—–-]/));
-  const attrLine = lines
+  const lines     = raw.split('\n');
+  const attrLine  = lines
     .map(l => l.replace(/^>\s?/, '').trim())
     .find(l => l.match(/^[—–-]/));
-  return `<blockquote>${quoteLines.join('<br>')}</blockquote>
-      ${attrLine ? `<p class="attr">${attrLine}</p>` : ''}`;
+  // Remove attribution line from raw before passing to marked
+  const quoteRaw  = lines
+    .filter(l => !l.replace(/^>\s?/, '').trim().match(/^[—–-]/))
+    .join('\n');
+  const html = marked.parse(quoteRaw);
+  return `${html}${attrLine ? `<p class="attr">${attrLine}</p>` : ''}`;
 }
 
 // ── Render plain paragraph(s) ─────────────────────────────────────────────────
-function renderParagraph(raw) {
+// ── Render generic markdown section via marked ───────────────────────────────
+function renderMarkdown(raw) {
   if (!raw) return '';
-  return raw
-    .split(/\n\n+/)
-    .map(p => `<p>${p.replace(/\n/g, ' ').trim()}</p>`)
-    .join('\n      ');
+  return marked.parse(raw);
 }
 
-// ── Render listening section → record player widget ───────────────────────────
+// ── Render listening section // ── Render listening section → record player widget ───────────────────────────
 function renderListening(raw) {
   if (!raw) return '';
   let artist = '', track = '', youtube = '#';
@@ -153,7 +165,6 @@ function renderReading(raw) {
 
 // ── Smart section renderers ───────────────────────────────────────────────────
 const SMART = {
-  'quote':     renderQuote,
   'listening': renderListening,
   'reading':   renderReading,
 };
@@ -222,7 +233,7 @@ function buildPage(filename, allFiles) {
   for (const key of ordered) {
     const raw = data[key];
     if (!raw) continue;
-    const renderer = SMART[key] || renderParagraph;
+    const renderer = SMART[key] || renderMarkdown;
     const content  = renderer(raw);
     if (!content) continue;
     if (sectionsHtml) sectionsHtml += '\n    <hr>\n';
