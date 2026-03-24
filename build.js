@@ -55,42 +55,43 @@ function renderListening(raw) {
     if (key === 'youtube') youtube = val;
   }
   return `<div class="song-card">
-    <a class="turntable" href="${youtube}" target="_blank" rel="noopener" title="Watch on YouTube">
-      <div class="tt-deck">
-        <svg width="86" height="60" viewBox="0 0 86 60" style="display:block;overflow:visible">
-          <circle cx="33" cy="30" r="26" fill="#111010" stroke="#222120" stroke-width="0.4"/>
-          <circle cx="33" cy="30" r="25" fill="#1a1918"/>
-          <circle cx="33" cy="30" r="21" fill="#1e1d1c"/>
-          <circle cx="33" cy="30" r="24" fill="none" stroke="#252321" stroke-width="0.5"/>
-          <circle cx="33" cy="30" r="20" fill="none" stroke="#252321" stroke-width="0.4"/>
-          <circle cx="33" cy="30" r="16" fill="none" stroke="#252321" stroke-width="0.35"/>
-          <circle cx="33" cy="30" r="12" fill="none" stroke="#252321" stroke-width="0.3"/>
-          <circle cx="33" cy="30" r="7" fill="#D14D41" opacity="0.88"/>
-          <circle cx="33" cy="30" r="1.4" fill="#100F0F"/>
-          <g class="tt-arm">
-            <circle cx="78" cy="8" r="3.2" fill="#1e1d1c" stroke="#343331" stroke-width="0.6"/>
-            <circle cx="78" cy="8" r="1.2" fill="#403E3C"/>
-            <line x1="78" y1="8" x2="60" y2="39" stroke="#282726" stroke-width="1.1" stroke-linecap="round"/>
-            <line x1="60" y1="39" x2="57" y2="45" stroke="#343331" stroke-width="2.0" stroke-linecap="round"/>
-            <line x1="57" y1="45" x2="56.5" y2="48" stroke="#1e1d1c" stroke-width="0.9" stroke-linecap="round"/>
-          </g>
-        </svg>
+    <div class="song-top">
+      <a class="turntable" href="${youtube}" target="_blank" rel="noopener" title="Watch on YouTube">
+        <div class="tt-deck">
+          <svg width="86" height="60" viewBox="0 0 86 60" style="display:block;overflow:visible">
+            <circle cx="33" cy="30" r="26" fill="#111010" stroke="#222120" stroke-width="0.4"/>
+            <circle cx="33" cy="30" r="25" fill="#1a1918"/>
+            <circle cx="33" cy="30" r="21" fill="#1e1d1c"/>
+            <circle cx="33" cy="30" r="24" fill="none" stroke="#252321" stroke-width="0.5"/>
+            <circle cx="33" cy="30" r="20" fill="none" stroke="#252321" stroke-width="0.4"/>
+            <circle cx="33" cy="30" r="16" fill="none" stroke="#252321" stroke-width="0.35"/>
+            <circle cx="33" cy="30" r="12" fill="none" stroke="#252321" stroke-width="0.3"/>
+            <circle cx="33" cy="30" r="7" fill="#D14D41" opacity="0.88"/>
+            <circle cx="33" cy="30" r="1.4" fill="#100F0F"/>
+            <g class="tt-arm">
+              <circle cx="78" cy="8" r="3.2" fill="#1e1d1c" stroke="#343331" stroke-width="0.6"/>
+              <circle cx="78" cy="8" r="1.2" fill="#403E3C"/>
+              <line x1="78" y1="8" x2="60" y2="39" stroke="#282726" stroke-width="1.1" stroke-linecap="round"/>
+              <line x1="60" y1="39" x2="57" y2="45" stroke="#343331" stroke-width="2.0" stroke-linecap="round"/>
+              <line x1="57" y1="45" x2="56.5" y2="48" stroke="#1e1d1c" stroke-width="0.9" stroke-linecap="round"/>
+            </g>
+          </svg>
+        </div>
+        <div class="tt-console">
+          <div class="tt-knob"></div>
+          <div class="tt-knob k2"></div>
+          <div style="flex:1"></div>
+          <div class="tt-slider"><div class="tt-thumb"></div></div>
+          <div style="flex:1"></div>
+          <div class="tt-led"></div>
+        </div>
+      </a>
+      <div class="song-meta">
+        <p class="song-title">${track}</p>
+        <p class="song-artist">${artist}</p>
       </div>
-      <div class="tt-console">
-        <div class="tt-knob"></div>
-        <div class="tt-knob k2"></div>
-        <div style="flex:1"></div>
-        <div class="tt-slider"><div class="tt-thumb"></div></div>
-        <div style="flex:1"></div>
-        <div class="tt-led"></div>
-      </div>
-    </a>
-    <div class="song-meta">
-      <p class="song-label">Currently spinning</p>
-      <p class="song-title">${track}</p>
-      <p class="song-artist">${artist}</p>
-      <p class="song-hint">↑ click to watch on youtube</p>
     </div>
+    <p class="song-hint">↑ click to watch on youtube</p>
   </div>`;
 }
 

@@ -251,7 +251,7 @@
     }
 
     /* ── Record player ── */
-    .song-card { display: flex; align-items: center; gap: 1.2rem; }
+    .song-card { display: block; }
     .turntable {
       flex-shrink: 0; background: #F2F0E5;
       border: 1px solid #DAD8CE; border-radius: 4px;
@@ -306,23 +306,16 @@
       content: ''; position: absolute; top: 50%; left: 1px; right: 1px;
       height: 1px; background: #575653; transform: translateY(-50%);
     }
-    .song-meta { flex: 1; }
-    /* reset all p inside song-card so .content p cascade doesn't bleed in */
-    .song-card p {
-      all: unset;
-      display: block;
-    }
-    .song-label {
-      font-family: 'iA Writer Mono S', monospace; font-size: 0.62rem;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--tx-3); margin-bottom: 0.2rem;
-    }
-    .song-title { font-size: 0.98rem; font-style: italic; color: var(--red); line-height: 1.3; transition: color 0.2s; }
-    .song-artist { font-family: 'iA Writer Mono S', monospace; font-size: 0.7rem; color: var(--tx-2); margin-top: 0.18rem; }
+    /* song card — top row: deck + meta side by side, hint below */
+    .song-card p { all: unset; display: block; }
+    .song-top { display: flex; align-items: stretch; gap: 1.2rem; }
+    .song-meta { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .song-card .song-title { font-size: 0.98rem; font-style: italic; color: var(--red) !important; line-height: 1.4; }
+    .song-artist { font-family: 'iA Writer Mono S', monospace; font-size: 0.7rem; color: var(--tx-2); margin-top: 0.3rem; }
     .song-hint {
       font-family: 'iA Writer Mono S', monospace; font-size: 0.6rem;
-      color: var(--tx-3); margin-top: 0.5rem; letter-spacing: 0.06em;
-      opacity: 0; transition: opacity 0.2s;
+      color: var(--tx-3); margin-top: 1rem; letter-spacing: 0.06em;
+      text-align: center; opacity: 0; transition: opacity 0.2s;
     }
     .song-card:hover .song-hint { opacity: 1; }
 
@@ -337,7 +330,6 @@
       padding-left: 0.75rem; border-left: 1px solid var(--ui-3); width: 100%;
     }
     /* ── Markdown content styles ── */
-    .content p { margin-bottom: 1rem; }
     .content h1 { font-size: 1.6rem; font-weight: 400; color: var(--tx); letter-spacing: -0.02em; margin: 1.4rem 0 0.5rem; line-height: 1.2; }
     .content h2 { font-size: 1.25rem; font-weight: 400; color: var(--tx); letter-spacing: -0.01em; margin: 1.2rem 0 0.4rem; }
     .content h3 { font-family: 'iA Writer Mono S', monospace; font-size: 0.82rem; font-weight: 400; color: var(--tx-2); text-transform: uppercase; letter-spacing: 0.1em; margin: 1rem 0 0.3rem; }
