@@ -3,8 +3,7 @@ title: Buri
 updated: March 2026
 hidden: true
 ---
-
-## Listening
+## A song for you
 ```listening
 artist: Vulfpeck
 track: LAX
