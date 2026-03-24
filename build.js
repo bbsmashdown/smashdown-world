@@ -45,13 +45,14 @@ function parseFrontmatter(raw) {
 
 // ── Render listening widget ───────────────────────────────────────────────────
 function renderListening(raw) {
-  let artist = '', track = '', youtube = '#';
+  let artist = '', track = '', album = '', youtube = '#';
   for (const line of raw.split('\n')) {
     const [k, ...v] = line.split(':');
     if (!k || !v.length) continue;
     const key = k.trim().toLowerCase(), val = v.join(':').trim();
     if (key === 'artist')  artist  = val;
     if (key === 'track')   track   = val;
+    if (key === 'album')   album   = val;
     if (key === 'youtube') youtube = val;
   }
   return `<div class="song-card">
@@ -87,11 +88,14 @@ function renderListening(raw) {
         </div>
       </a>
       <div class="song-meta">
-        <p class="song-title">${track}</p>
         <p class="song-artist">${artist}</p>
+        <p class="song-title">${track}</p>
+        ${album ? `<p class="song-album">${album}</p>` : ''}
       </div>
     </div>
-    <p class="song-hint">↑ click to watch on youtube</p>
+    <div class="song-hint-row">
+      <p class="song-hint">↑ click to watch on youtube</p>
+    </div>
   </div>`;
 }
 
