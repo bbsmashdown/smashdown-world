@@ -2,8 +2,7 @@
 title: walt
 updated: March 2026
 ---
-# Poems 
-## 51
+# 51
 
 The past and present wilt—I have fill'd them, emptied them.
 And proceed to fill my next fold of the future.
@@ -36,5 +35,5 @@ Will you speak before I am gone? will you prove already too late?
 > testing this block quote
 > maybe a waste of time
 > but still fun somehow
-> *– brayden*
+  *– brayden*
 
