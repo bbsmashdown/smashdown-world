@@ -208,10 +208,17 @@ function buildPage(filename, allFiles) {
   const template = fs.readFileSync('./templates/page.html', 'utf8');
   const content  = processBody(body);
 
-  // Breadcrumb: with parent shows "parent / page", without shows "Smashdown World / page"
+  // Breadcrumb: with parent shows "Parent Title / page", without shows "Smashdown World / page"
   let parentCrumb = '';
   if (data.parent) {
-    parentCrumb = `<a class="bc-home" href="/${data.parent}.html">${data.parent}</a>`;
+    // Read parent file's title from its frontmatter
+    let parentTitle = data.parent;
+    try {
+      const parentRaw  = fs.readFileSync(`./content/${data.parent}.md`, 'utf8');
+      const parentData = parseFrontmatter(parentRaw).data;
+      if (parentData.title) parentTitle = parentData.title;
+    } catch(e) {}
+    parentCrumb = `<a class="bc-home" href="/${data.parent}.html">${parentTitle}</a>`;
   } else {
     parentCrumb = `<a class="bc-home" href="/">Smashdown World</a>`;
   }

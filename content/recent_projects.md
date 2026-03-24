@@ -1,13 +1,13 @@
 ---
-title: Recent Projects
+title: recent projects
 updated: March 2026
 hidden:false
 ---
 ## March
-- [Home Network Rebuild](/home-network.html)
+- [Home Network Rebuild](/home_network.html)
 - Northglenn Website Build
 ## February
 - Obsidian patient complaint dashboard
 - Obsidian provider feedback database
 ## January
-- [Retirement Simulator Build](/retirement-simulator.html)
+- [Retirement Simulator Build](/retirement_simulator.html)
