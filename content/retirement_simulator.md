@@ -1,5 +1,5 @@
 ---
-title: retirement simulator changelog
+title: Retirement Simulator Changelog
 updated: January–February 2026
 hidden: true
 parent: recent_projects

@@ -1,5 +1,5 @@
 ---
-title: recent projects
+title: Recent Projects
 updated: March 2026
 hidden:false
 ---

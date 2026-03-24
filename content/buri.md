@@ -1,5 +1,5 @@
 ---
-title: buri
+title: Buri
 updated: March 2026
 hidden: true
 ---

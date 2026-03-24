@@ -170,19 +170,19 @@ function buildNav(files, currentPage) {
     .map(f => {
       const raw  = fs.readFileSync(`./content/${f}`, 'utf8');
       const { data } = parseFrontmatter(raw);
-      return { name: path.basename(f, '.md'), hidden: data.hidden === 'true' };
+      const name = path.basename(f, '.md');
+      return { name, title: data.title || name, hidden: data.hidden === 'true' };
     })
     .filter(p => p.name !== 'index' && !p.hidden)
-    .map(p => p.name)
     .sort((a, b) => {
-      if (a === 'now') return -1;
-      if (b === 'now') return 1;
-      return a.localeCompare(b);
+      if (a.name === 'now') return -1;
+      if (b.name === 'now') return 1;
+      return a.name.localeCompare(b.name);
     });
 
   const dropdownItems = pages
-    .filter(p => p !== 'now')
-    .map(p => `<a href="/${p}.html" class="dropdown-item${currentPage === p ? ' active' : ''}">${p}</a>`)
+    .filter(p => p.name !== 'now')
+    .map(p => `<a href="/${p.name}.html" class="dropdown-item${currentPage === p.name ? ' active' : ''}">${p.title.toLowerCase()}</a>`)
     .join('\n          ');
 
   const nowActive = currentPage === 'now' ? ' active' : '';
@@ -225,7 +225,7 @@ function buildPage(filename, allFiles) {
 
   let html = template;
   html = html.replaceAll('{{title}}',        data.title   || pageName);
-  html = html.replaceAll('{{page}}',         pageName);
+  html = html.replaceAll('{{page}}',         data.title   || pageName);
   html = html.replaceAll('{{updated}}',      data.updated || '');
   html = html.replace('{{content}}',        content);
   html = html.replace('{{nav}}',            buildNav(allFiles, pageName));
@@ -250,19 +250,19 @@ function buildIndex(allFiles) {
     .map(f => {
       const raw  = fs.readFileSync(`./content/${f}`, 'utf8');
       const { data } = parseFrontmatter(raw);
-      return { name: path.basename(f, '.md'), hidden: data.hidden === 'true' };
+      const name = path.basename(f, '.md');
+      return { name, title: data.title || name, hidden: data.hidden === 'true' };
     })
     .filter(p => p.name !== 'index' && !p.hidden)
-    .map(p => p.name)
     .sort((a, b) => {
-      if (a === 'now') return -1;
-      if (b === 'now') return 1;
-      return a.localeCompare(b);
+      if (a.name === 'now') return -1;
+      if (b.name === 'now') return 1;
+      return a.name.localeCompare(b.name);
     });
 
   const dropdownItems = pages
-    .filter(p => p !== 'now')
-    .map(p => `<a href="/${p}.html" class="dropdown-item">${p}</a>`)
+    .filter(p => p.name !== 'now')
+    .map(p => `<a href="/${p.name}.html" class="dropdown-item">${p.title.toLowerCase()}</a>`)
     .join('\n          ');
 
   let navHtml;
