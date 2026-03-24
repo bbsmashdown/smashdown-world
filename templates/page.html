@@ -30,13 +30,13 @@
       --ui:              #E6E4D9;
       --ui-2:            #DAD8CE;
       --ui-3:            #CECDC3;
-      --tx-3:            #2d2d2d;
-      --tx-2:            #3b3b3b;
+      --tx-3:            #B7B5AC;
+      --tx-2:            #6F6E69;
       --tx:              #100F0F;
       --red:             #AF3029;
-      --cyan:            #AF3029;
-      --accent-subtitle: #AF3029;
-      --accent-book:     #AF3029;
+      --cyan:            #24837B;
+      --accent-subtitle: #205EA6;
+      --accent-book:     #205EA6;
       --hover-home:      #AF3029;
       --logo-color:     #100F0F;
     }
@@ -56,7 +56,7 @@
       transition: background 0.2s ease, color 0.2s ease;
     }
 
-    main { width: 100%; max-width: 680px; }
+    main { width: 100%; max-width: 580px; }
 
     /* ── Nav ── */
     nav {
@@ -190,7 +190,7 @@
     .theme-toggle input:checked ~ .toggle-thumb .icon-sun  { opacity: 1; }
 
     /* ── Header ── */
-    header { margin-bottom: 0.7rem; animation: fade 0.4s 0.05s ease both; }
+    header { margin-bottom: 1.2rem; animation: fade 0.4s 0.05s ease both; }
     h1 {
       font-size: clamp(1.9rem, 5vw, 2.6rem);
       font-weight: 400; line-height: 1.15;
@@ -271,9 +271,8 @@
       transition: background 0.4s, box-shadow 0.4s, border-color 0.4s;
     }
     .turntable:hover .tt-led {
-      background: #80d609; 
-      border-color: #80d609;
-      box-shadow: 0 0 8px 2px rgba(128,214,9,0.9);
+      background: #879A39; border-color: #879A39;
+      box-shadow: 0 0 5px rgba(135,154,57,0.8);
     }
     .tt-console {
       border-top: 1px solid #DAD8CE; padding: 4px 7px;
@@ -325,8 +324,8 @@
     }
     .song-card:hover .song-hint-row { opacity: 1; }
     .song-hint {
-      font-family: 'iA Writer Mono S', monospace; font-size: 0.4rem;
-      color: var(--tx-3); letter-spacing: 0.03em;
+      font-family: 'iA Writer Mono S', monospace; font-size: 0.6rem;
+      color: var(--tx-3); letter-spacing: 0.06em;
     }
 
     /* ── Books ── */
@@ -453,6 +452,35 @@
       toggle.checked     = t === 'light';
       localStorage.setItem('sw-theme', t);
     }
+
+    // Referrer breadcrumb — if we came from another page on this site,
+    // insert it between "Smashdown World" and the current page
+    (function() {
+      try {
+        const ref = document.referrer;
+        if (!ref) return;
+        const refUrl  = new URL(ref);
+        const siteUrl = new URL(window.location.href);
+        // Only insert if referrer is same origin and a different page
+        if (refUrl.origin !== siteUrl.origin) return;
+        const refPath = refUrl.pathname.replace(/^\//, '').replace(/\.html$/, '');
+        const curPath = siteUrl.pathname.replace(/^\//, '').replace(/\.html$/, '');
+        if (!refPath || refPath === curPath || refPath === '') return;
+        // Don't insert if referrer is the home/index page
+        if (refPath === 'index' || refPath === '/') return;
+        // Build the extra crumb
+        const sep   = document.querySelector('.bc-sep');
+        const crumb = document.createElement('a');
+        crumb.href  = refUrl.pathname;
+        crumb.className = 'bc-home';
+        crumb.textContent = refPath;
+        crumb.style.marginRight = '0';
+        const newSep = sep.cloneNode(true);
+        // Insert: Smashdown World / [referrer] / currentpage
+        sep.parentNode.insertBefore(newSep, sep.nextSibling);
+        sep.parentNode.insertBefore(crumb, newSep);
+      } catch(e) {}
+    })();
 
     // Dropdown — hover on desktop, chevron tap on mobile
     const dropdown = document.querySelector('.nav-dropdown');
