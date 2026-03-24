@@ -2,7 +2,6 @@
 title: Now
 updated: March 2026
 ---
-
 ## Quote
 
 > "Hangin' in there like a hair in a biscuit."
