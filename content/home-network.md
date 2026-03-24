@@ -2,6 +2,7 @@
 title: Home Network Changelog
 updated: March 2026
 hidden: true
+parent: recent-projects
 ---  
 ## Home Router / UniFi Gateway
 - **VLAN segmentation built** — Network redesigned into six independent VLANs (Trusted, IoT, Management, PiDNS, Guest, Default LAN), each with its own firewall zone and default-deny inter-zone policy.

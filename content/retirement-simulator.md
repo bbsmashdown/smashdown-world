@@ -2,6 +2,7 @@
 title: Retirement Simulator Changelog
 updated: January–February 2026
 hidden: true
+parent: recent-projects
 ---
 ## Linear Simulation (Growth Simulation Sheet)
 - **Year-by-year projection engine built** — Full simulation covering ages 18–100 across three tax buckets (Tax Deferred, Roth, After-Tax), with inflation tracking, variable contribution/growth assumptions, and a summary table.

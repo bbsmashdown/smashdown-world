@@ -208,12 +208,21 @@ function buildPage(filename, allFiles) {
   const template = fs.readFileSync('./templates/page.html', 'utf8');
   const content  = processBody(body);
 
+  // Breadcrumb: with parent shows "parent / page", without shows "Smashdown World / page"
+  let parentCrumb = '';
+  if (data.parent) {
+    parentCrumb = `<a class="bc-home" href="/${data.parent}.html">${data.parent}</a>`;
+  } else {
+    parentCrumb = `<a class="bc-home" href="/">Smashdown World</a>`;
+  }
+
   let html = template;
-  html = html.replaceAll('{{title}}',   data.title   || pageName);
-  html = html.replaceAll('{{page}}',    pageName);
-  html = html.replaceAll('{{updated}}', data.updated || '');
-  html = html.replace('{{content}}',   content);
-  html = html.replace('{{nav}}',       buildNav(allFiles, pageName));
+  html = html.replaceAll('{{title}}',        data.title   || pageName);
+  html = html.replaceAll('{{page}}',         pageName);
+  html = html.replaceAll('{{updated}}',      data.updated || '');
+  html = html.replace('{{content}}',        content);
+  html = html.replace('{{nav}}',            buildNav(allFiles, pageName));
+  html = html.replace('{{parent_crumb}}',   parentCrumb);
 
   const outName = `${pageName}.html`;
   fs.writeFileSync(`./dist/${outName}`, html);

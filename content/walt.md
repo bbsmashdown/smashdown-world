@@ -30,11 +30,4 @@ Who wishes to walk with me?
 Will you speak before I am gone? will you prove already too late?
 
 
-*– Walt Whitman*
-
-> testing this block quote
-> maybe a waste of time
-> but still fun somehow
-
-*– brayden*
-
+> *– Walt Whitman*

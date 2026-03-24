@@ -339,27 +339,25 @@
       line-height: 1.65; margin-top: 0.55rem;
       padding-left: 0.75rem; border-left: 1px solid var(--ui-3); width: 100%;
     }
-    /* ── Markdown content styles ── */
-    .content h1 { font-size: 1.6rem; font-weight: 400; color: var(--tx); letter-spacing: -0.02em; margin: 1.4rem 0 0.5rem; line-height: 1.2; }
-    .content h2 { font-size: 1.25rem; font-weight: 400; color: var(--tx); letter-spacing: -0.01em; margin: 1.2rem 0 0.4rem; }
-    .content h3 { font-family: 'iA Writer Mono S', monospace; font-size: 0.82rem; font-weight: 400; color: var(--tx-2); text-transform: uppercase; letter-spacing: 0.1em; margin: 1rem 0 0.3rem; }
-    .content h4 { font-family: 'iA Writer Mono S', monospace; font-size: 0.75rem; color: var(--tx-3); letter-spacing: 0.08em; margin: 0.8rem 0 0.25rem; }
-    .content ul, .content ol { padding-left: 1.4rem; margin: 0.5rem 0; }
-    .content li { margin-bottom: 0.25rem; line-height: 1.65; }
-    .content ol { list-style: decimal; }
-    .content ul { list-style: disc; }
-    .content a { color: var(--accent-subtitle); text-decoration: underline; text-decoration-color: var(--ui-3); text-underline-offset: 3px; transition: color 0.15s; }
-    .content a:hover { color: var(--hover-home); }
-    .content strong { font-weight: 600; color: var(--tx); }
-    .content em { font-style: italic; }
-    .content code { font-family: 'iA Writer Mono S', monospace; font-size: 0.82em; background: var(--ui); padding: 0.1em 0.35em; border-radius: 3px; color: var(--tx-2); }
-    .content hr { border: none; border-top: 1px solid var(--ui-2); margin: 1.5rem 0; }
+
+
+    .footer-logo {
+      display: block;
+      text-decoration: none;
+      opacity: 0.55;
+      transition: opacity 0.2s;
+    }
+    .footer-logo:hover { opacity: 0.85; }
+    .footer-logo svg { display: block; height: 1.1rem; width: auto; }
+    .footer-updated {
+      font-family: 'iA Writer Mono S', monospace; font-size: 0.7rem; color: var(--tx-3);
+    }
 
     /* ── Footer ── */
     footer {
       margin-top: 3rem; padding-top: 1.4rem;
       border-top: 1px solid var(--ui);
-      display: flex; justify-content: space-between; align-items: baseline;
+      display: flex; justify-content: space-between; align-items: flex-end;
       animation: fade 0.4s 0.4s ease both;
     }
     .footer-name, .footer-updated {
@@ -380,7 +378,7 @@
   <main>
     <nav>
       <div class="breadcrumb">
-        <a class="bc-home" href="/">Smashdown World</a>
+        {{parent_crumb}}
         <span class="bc-sep">/</span>
         <span class="bc-page">{{page}}</span>
       </div>
