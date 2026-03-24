@@ -6,8 +6,8 @@ updated: March 2026
 ## Quote
 
 > "Hangin' in there like a hair in a biscuit."
->
-> — Boyd Ashdown
+
+   — Boyd Ashdown
 - - -
 
 ## Listening
