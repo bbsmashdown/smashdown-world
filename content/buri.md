@@ -8,6 +8,7 @@ hidden: true
 ```listening
 artist: Vulfpeck
 track: LAX
+album: The Joy of Music, The Job of Real Estate, 2021
 youtube: https://www.youtube.com/watch?v=NzxW8nxgENA
 ```
 - - -
