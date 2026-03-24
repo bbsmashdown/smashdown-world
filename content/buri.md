@@ -16,7 +16,7 @@ youtube: https://www.youtube.com/watch?v=NzxW8nxgENA
 ```reading
 ### Blood Meridian
 author: Cormac McCarthy
-- Whatever in creation exists without my knowledge exists without my consent.
+- - Whatever in creation exists without my knowledge exists without my consent.
 ```
 - - -
 
