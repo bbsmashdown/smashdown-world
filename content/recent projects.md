@@ -7,7 +7,7 @@ hidden:false
 - [Home Network Rebuild](/home-network.html)
 - Northglenn Website Build
 ## February
-- Obsidian patient complaint database
+- Obsidian patient complaint dashboard
 - Obsidian provider feedback database
 ## January
 - [Retirement Simulator Build](/retirement-simulator.html)
