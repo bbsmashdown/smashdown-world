@@ -12,7 +12,6 @@ parent: recent_projects
 ## publish.js
 - **No changes made** — JS left unchanged across both sites. The two features (image lightbox with keyboard/swipe navigation, enlarged hover previews with viewport boundary detection) are purely behavioral with no color or identity dependency.
 - **JS spacing fix rejected** — Using JS to remove empty `<p>` elements between H2 headings and lists was considered and rejected; Obsidian uses those elements intentionally in some contexts, so a global removal risked collapsing spacing in unintended places. Solved with CSS negative margin instead.
-- **Known issue noted** — `imagesByPath` cache in `publish.js` is never cleared between page navigations. Low practical risk but accumulates memory on long sessions; flagged for future maintenance.
 ---
 ## Color System
 - **Hue rotation as primary differentiation** — Sister site colors derived by rotating the original accent hue (`--accent-h: 212`, blue) rather than picking an unrelated palette. Rotation preserves saturation and lightness relationships so both sites feel like they come from the same design hand.
