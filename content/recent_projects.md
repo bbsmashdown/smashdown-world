@@ -3,6 +3,7 @@ title: Recent Projects
 updated: March 2026
 hidden:false
 ---
+#2026
 ## March
 - Aquired **smashdown.org** domain
 	- This website
@@ -15,3 +16,6 @@ hidden:false
 	- Patient Complaint Database
 ## January
 - [Retirement Simulator Build](/retirement_simulator.html)
+
+# 2025
+- [Digital Photography Workflow](/photo_workflow.html)

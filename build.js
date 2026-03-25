@@ -286,3 +286,25 @@ function buildIndex(allFiles) {
 }
 
 buildIndex(files);
+
+// ── Copy attachments/ folder into dist/ ───────────────────────────────────────────
+// Any file in /attachments gets served at the root URL, e.g. /attachments/report.pdf → /report.pdf
+function copyAttachments() {
+  const attachmentsDir = './attachments';
+  if (!fs.existsSync(attachmentsDir)) return;
+  function copyDir(src, dest) {
+    if (!fs.existsSync(dest)) fs.mkdirSync(dest, { recursive: true });
+    for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+      const srcPath  = `${src}/${entry.name}`;
+      const destPath = `${dest}/${entry.name}`;
+      if (entry.isDirectory()) {
+        copyDir(srcPath, destPath);
+      } else {
+        fs.copyFileSync(srcPath, destPath);
+        console.log(`✓ copied ${srcPath} → ${destPath}`);
+      }
+    }
+  }
+  copyDir(attachmentsDir, './dist');
+}
+copyAttachments();
