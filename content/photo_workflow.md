@@ -9,15 +9,15 @@ parent: recent_projects
 
 ### Camera Settings (Before Shooting)
 
-1. Go to the **I.Q. Tab**
-   - Set Image Quality → **F+RAW** (shoots both Fuji JPEG and RAW simultaneously)
-2. Go to the **Wrench Menu**
-   - Set Save Data Setup → **Backup**
+1. Go to the I.Q. Tab
+   - Set Image Quality → F+RAW (shoots both Fuji JPEG and RAW simultaneously)
+2. Go to the Wrench Menu
+   - Set Save Data Setup → Backup
    - This enables a backup to card slot B and links the JPEG and RAW files together
 
 ### Import into Capture One
 
-- Import both **RAW and JPEG** files into a **new Capture One session**
+- Import both RAW and JPEG files into a new Capture One session
 - Rename files to match, e.g.:
   - `mexico_city_23.RAF` and `mexico_city_23.jpeg`
 
@@ -30,16 +30,16 @@ parent: recent_projects
 
 ### Steps
 
-1. **Hide all RAW files** → `⌘ + Shift + R`
-2. **Color tag, star, and keyword** all JPEGs:
-   - 🔴 **Red** → Trash (reject)
-   - 🟡 **Yellow** → Keep
-   - 🟢 **Green** → Plan to edit the RAW file
-3. **Delete rejects**: Move all red-tagged photos to trash and empty trash
-4. **Sync metadata** from JPEGs → `⌘ + Shift + S`
-5. **Hide all JPEGs** → `⌘ + Shift + J`
-6. **Show all RAW files** → `⌘ + Shift + R`
-7. **Load metadata** onto RAW files → `⌘ + Shift + L`
+1. Hide all RAW files → `⌘ + Shift + R`
+2. Color tag, star, and keyword all JPEGs:
+   - 🔴 Red → Trash (reject)
+   - 🟡 Yellow → Keep
+   - 🟢 Green → Plan to edit the RAW file
+3. Delete rejects: Move all red-tagged photos to trash and empty trash
+4. Sync metadata from JPEGs → `⌘ + Shift + S`
+5. Hide all JPEGs → `⌘ + Shift + J`
+6. Show all RAW files → `⌘ + Shift + R`
+7. Load metadata onto RAW files → `⌘ + Shift + L`
 
 > At this point, all photos are reviewed, rejects removed, and tags/stars are synced between the unedited RAW files and the Fuji Film Sim JPEGs.
 
@@ -52,14 +52,14 @@ parent: recent_projects
 
 ### Steps
 
-1. **Hide all RAW files** → `⌘ + Shift + R`
-2. **Show all JPEGs** → `⌘ + Shift + J`
-3. **Select all JPEGs** and click the **Export** button
+1. Hide all RAW files → `⌘ + Shift + R`
+2. Show all JPEGs → `⌘ + Shift + J`
+3. Select all JPEGs and click the Export button
 4. Apply **both** export recipes:
-   - **A. Export to Apple Photos**
+   - A. Export to Apple Photos
      - Automatically imports into Apple Photos
      - ⚠️ Requires manual deletion of the duplicate after import is complete
-   - **B. Export to Synology**
+   - B. Export to Synology
      - Exports to Synology NAS
 
 > You will lose the Fuji JPEG after this step — these are the last copies before splitting off forever.
@@ -68,9 +68,9 @@ parent: recent_projects
 
 | Destination | Location |
 |---|---|
-| **Apple Photos** | Standard library (delete duplicate after import) |
-| **Synology Photos** | `Photos (shared folder)` → `Trip/Event Name` |
-| **Synology RAW Backup** | `Media Backup` → `Capture One RAW Files` → `Fuji X-T3` → `Year` → `Session Folder` |
+| Apple Photos | Standard library (delete duplicate after import) |
+| Synology Photos | `Photos (shared folder)` → `Trip/Event Name` |
+| Synology RAW Backup | `Media Backup` → `Capture One RAW Files` → `Fuji X-T3` → `Year` → `Session Folder` |
 
 > Synology Photos automatically adds filters for Year, Lens, People, etc.
 
@@ -83,22 +83,22 @@ parent: recent_projects
 
 ### Editing RAW Files
 
-1. In Capture One, work only with the remaining **RAW files**
-2. Select the **green-tagged** files (your selects)
+1. In Capture One, work only with the remaining RAW files
+2. Select the green-tagged files (your selects)
 3. Make edits, apply styles, etc.
-4. Once a photo is **finished**:
+4. Once a photo is finished:
    - Optionally change the star rating
    - Re-export all edited photos using **both** recipes:
-     - **A. Apple Photos recipe** — requires manual deletion of the duplicate
-     - **B. Synology recipe** — set to **overwrite** the prior JPEG
+     - A. Apple Photos recipe — requires manual deletion of the duplicate
+     - B. Synology recipe — set to **overwrite** the prior JPEG
 
 ### Archiving the Session
 
 Once all photos are edited and exported:
 
-1. Run a **Time Machine backup**
-2. In **Finder** (not Capture One), move the entire session folder to the appropriate folder on the NAS
-3. **Double-click the `session.db` file** after moving it — this shows Capture One the new file location
+1. Run a Time Machine backup
+2. In Finder (not Capture One), move the entire session folder to the appropriate folder on the NAS
+3. Double-click the `session.db` file after moving it — this shows Capture One the new file location
 
 ---
 

@@ -353,6 +353,28 @@
       font-family: 'iA Writer Mono S', monospace; font-size: 0.7rem; color: var(--tx-3);
     }
 
+    /* ── Tables ── */
+    .content table {
+      width: 100%; border-collapse: collapse;
+      font-size: 0.92rem; margin: 1.2rem 0 1.5rem;
+    }
+    .content thead th {
+      font-family: 'iA Writer Mono S', monospace;
+      font-size: 0.7rem; font-weight: 400;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--tx-3); text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid var(--ui-2);
+    }
+    .content tbody td {
+      padding: 0.6rem 0.75rem;
+      color: var(--tx-2);
+      border-bottom: 1px solid var(--ui);
+      vertical-align: top;
+      line-height: 1.55;
+    }
+    .content tbody tr:last-child td { border-bottom: none; }
+
     /* ── Footer ── */
     footer {
       margin-top: 3rem; padding-top: 1.4rem;
