@@ -4,7 +4,7 @@ updated: March 2026
 hidden: false
 parent: recent_projects
 ---
-> [Photo Workflow Visual](/attachments/)
+> [Photo Workflow Visual](/attachments/photo_workflow_visual.pdf)
 ## Phase 1: Camera Setup & Initial Import
 
 ### Camera Settings (Before Shooting)
