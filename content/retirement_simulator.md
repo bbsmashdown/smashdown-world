@@ -22,7 +22,7 @@ parent: recent_projects
 - **Working table range bug fixed** — When the Growth Simulation expanded to ages 18–100, the MC working table (F57:P121 = 64 rows) was not extended, causing #N/A errors; fixed by extending to row 139.
 ---
 ## Historical Simulation Sheet
-### Deterministic, Data Driven → Testing against Sequence of Returns Risk 
+> Deterministic, Data Driven → Testing against Sequence of Returns Risk 
 - **Two-phase historical stress test built** — Accumulation phase loops through every historical starting year (S&P 500, bond, and CPI data from 1928–2025); decumulation phase runs the five percentile starting balances through every possible historical retirement sequence.
 - **Data table engine chosen over VBA/PowerQuery** — Excel's What-If data table used for both phases for transparency and maintainability; formulas remain readable and fixable without macros.
 - **Real values used for percentile ranking** — Wide historical inflation variation makes nominal comparisons misleading; real values used to rank worst/25th/median/75th/best outcomes, with cumulative inflation carried forward into decumulation.
@@ -33,4 +33,4 @@ parent: recent_projects
 ---
 ## Current State / Net Worth Sheet
 - **Net worth snapshot sheet built** — Assets and liabilities across all account types (Checking/Savings, Non-Qualified, 529s, Tax Deferred, Roth); balances auto-populate starting values in all simulation sheets.
-- **Monthly budget workbook built** — January built as master sheet; remaining months created as copies using Group Sheets; dashboard references cross-sheet totals via `SUM(January:December!CellRef)`.
+- **Monthly cash flow management workbook built** — January built as master sheet; remaining months created as copies using Group Sheets; dashboard references cross-sheet totals via `SUM(January:December!CellRef)`.
