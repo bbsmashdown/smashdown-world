@@ -24,8 +24,8 @@ youtube: https://www.youtube.com/watch?v=z5rRZdiu1UE
 ### VIgil
 author: George Saunders
 
-### The Score
-author: C. Thi Nguyen
+### Children of Strife
+author: Adrian Tchaikovsky
 ```
 - - -
 
