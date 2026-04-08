@@ -130,6 +130,37 @@ function renderReading(raw) {
   }</div>`;
 }
 
+// ── Transform accordion list items ───────────────────────────────────────────
+// Any <li> whose first element is <strong>Label</strong> — detail text gets
+// converted to a click-to-expand accordion item. Works on all ul/ol lists.
+// Nested <ul>/<ol> inside the <li> are preserved inside the detail panel.
+function applyAccordion(html) {
+  // Match <li> items that start with <strong>...</strong> followed by optional em-dash detail
+  return html.replace(
+    /<li>([\s\S]*?)<\/li>/g,
+    (match, inner) => {
+      // Must start with <strong>
+      const boldMatch = inner.match(/^<strong>([^<]+)<\/strong>([\s\S]*)$/);
+      if (!boldMatch) return match;
+
+      const label  = boldMatch[1].trim();
+      const rest   = boldMatch[2];
+
+      // Strip leading em-dash separator (— or &mdash; or " - " or " — ")
+      const detail = rest.replace(/^\s*(?:—|&mdash;|–|&ndash;|\s-\s)\s*/, '').trim();
+
+      if (!detail) return match; // label only, no detail — leave as-is
+
+      return `<li class="accordion-item">
+  <button class="accordion-trigger" aria-expanded="false">
+    <span class="accordion-chevron">›</span><span class="accordion-label">${label}</span>
+  </button>
+  <div class="accordion-detail" hidden>${detail}</div>
+</li>`;
+    }
+  );
+}
+
 // ── Process body — replace special fences then pass to marked ────────────────
 // We extract ```listening and ```reading blocks, replace with placeholders,
 // run marked on everything else, then swap placeholders back in.
@@ -160,6 +191,9 @@ function processBody(body) {
       widget
     );
   });
+
+  // Transform bold-label list items into accordions
+  html = applyAccordion(html);
 
   return html;
 }
