@@ -24,8 +24,7 @@ parent: recent_projects
 - **Full audit and WAN hardening** — WAN interface audited; confirmed no management ports exposed to the internet.
 - **WireGuard configured as primary VPN** — Tunnel connects directly to home UniFi gateway; DNS routes through Pi-hole automatically; verified via DNS leak test.
 - **Tailscale masquerade bug fixed** — `gl-tailscale-fix` plugin installed to resolve documented GL.iNet bug that prevented LAN client traffic from being forwarded through the Tailscale exit node.
-- **Tailscale configured as backup VPN** — GliNet enrolled in tailnet; LAN client forwarding verified; both VPN paths now functional and tested. 
-	- Tailscale requires automatic DNS from router to establish tunnel, can then manually switch to pi-hole DNS (via Tailscale IP) if network wide ad block/DNS desired.
+- **Tailscale configured as backup VPN** — GliNet enrolled in tailnet; LAN client forwarding verified; both VPN paths now functional and tested. Tailscale requires automatic DNS from router to establish tunnel, can then manually switch to pi-hole DNS (via Tailscale IP) if network wide ad block/DNS desired.
 - **Both VPN paths deliver Pi-hole + encrypted DNS** — WireGuard and Tailscale paths both confirmed routing DNS through Pi-hole → Unbound → Quad9 DoT.
 ---
 ## Tailscale ACL
