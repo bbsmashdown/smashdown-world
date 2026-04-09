@@ -396,11 +396,11 @@
     }
 
     /* ── Accordion list items ── */
-    li.accordion-item { list-style: none; border-bottom: 0.5px solid var(--ui-3); }
+    li.accordion-item { list-style: none; }
     .accordion-trigger {
       display: flex; align-items: center; gap: 8px;
       width: 100%; background: none; border: none; cursor: pointer;
-      padding: 0.5rem 0; text-align: left; color: var(--tx);
+      padding: 0.3rem 0; text-align: left; color: var(--tx);
       font-family: 'Newsreader', Georgia, serif; font-size: 1rem; font-weight: 300;
     }
     .accordion-trigger:hover .accordion-label { color: var(--cyan); }
@@ -411,9 +411,8 @@
     .accordion-trigger[aria-expanded="true"] .accordion-chevron { transform: rotate(90deg); }
     .accordion-label { font-weight: 400; }
     .accordion-detail {
-      padding: 0 0 0.75rem 1.3rem;
-      color: var(--tx-2); font-size: 0.95rem; line-height: 1.7;
-      border-left: 2px solid var(--ui-3); margin-left: 4px;
+      padding: 0 0 0.5rem 1.3rem;
+      color: var(--tx-3); font-size: 0.95rem; line-height: 1.7;
     }
     .accordion-detail p { margin: 0; }
   </style>
