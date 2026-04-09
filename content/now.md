@@ -1,6 +1,6 @@
 ---
 title: Now
-updated: March 2026
+updated: April 2026
 ---
 ## Quote
 
@@ -21,7 +21,7 @@ youtube: https://www.youtube.com/watch?v=z5rRZdiu1UE
 
 ## Reading
 ```reading
-### VIgil
+### Vigil
 author: George Saunders
 
 ### Children of Strife
