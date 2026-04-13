@@ -7,7 +7,6 @@ parent: recent_projects
 ## Template Engine
 - **Migrated from Templater to QuickAdd** — Initial build used Templater with sequential one-at-a-time prompts; migrated to QuickAdd user scripts after discovering the one-page inputs feature, enabling all fields to be collected in a single form.
 - **YAML frontmatter conflict resolved** — Templater tags inside YAML prevented Obsidian from recognizing properties; solved by outputting entire file content via `tR +=` inside a single silent block so Obsidian sees clean YAML with no residual template tags.
-- **ES module syntax error fixed** 
 ---
 ## Data Entry & Forms
 - **One-page form implemented** — All complaint and employee fields now collected in a single QuickAdd form instead of sequential popups; natural language date support active ("today", "yesterday", "last tuesday").
@@ -24,8 +23,8 @@ parent: recent_projects
 ---
 ## Data Structure
 - **Property naming standardized to camelCase** — Converted from snake_case midway through the project; cleaner appearance in Bases column headers and consistent with JavaScript conventions.
-- **`referralSource` implemented as suggester** — Allows selection from common options (Nursing, Pharmacy, Patient Advocate, etc.) while also accepting free-text entry for unlisted sources.
-- **`status` field added** — Defaults to `Open`; intended for manual update to `Closed` when resolved; togglable to a checkbox boolean if a simpler binary workflow is preferred.
+- **referralSource implemented as suggester** — Allows selection from common options (Nursing, Pharmacy, Patient Advocate, etc.) while also accepting free-text entry for unlisted sources.
+- **status field added** — Defaults to `Open`; intended for manual update to `Closed` when resolved; togglable to a checkbox boolean if a simpler binary workflow is preferred.
 ---
 ## PHI Separation
 - **MRN and Date of Service stripped from Obsidian vault** — Both fields are collected in the QuickAdd form but no longer written to the note's YAML frontmatter; vault now contains zero patient-identifiable care data.

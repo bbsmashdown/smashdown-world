@@ -8,5 +8,6 @@ parent:
 - *Brave New World*, Aldous Huxley
 - *Lincoln in the Bardo*, George Saunders
 - *Project Hail Mary*, Andy Weir
+- *Children of Strife*, Adrian Tchaikovsky
 ## Non-Fiction
 - *The Score*, C. Thi Nguyen 

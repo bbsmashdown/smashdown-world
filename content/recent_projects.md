@@ -3,7 +3,7 @@ title: Recent Projects
 updated: March 2026
 hidden:false
 ---
-#2026
+# 2026
 ## March
 - Aquired **smashdown.org** domain
 	- This website

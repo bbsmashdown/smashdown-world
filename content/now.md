@@ -24,8 +24,8 @@ youtube: https://www.youtube.com/watch?v=z5rRZdiu1UE
 ### Vigil
 author: George Saunders
 
-### Children of Strife
-author: Adrian Tchaikovsky
+### White Boy Shuffle
+author: Paul Beatty
 ```
 - - -
 
