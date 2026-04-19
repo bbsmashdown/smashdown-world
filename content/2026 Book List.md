@@ -9,5 +9,6 @@ parent:
 - *Lincoln in the Bardo*, George Saunders
 - *Project Hail Mary*, Andy Weir
 - *Children of Strife*, Adrian Tchaikovsky
+- *The White Boy Shuffle*, Paul Beatty
 ## Non-Fiction
 - *The Score*, C. Thi Nguyen 

@@ -24,7 +24,7 @@ youtube: https://www.youtube.com/watch?v=z5rRZdiu1UE
 ### Vigil
 author: George Saunders
 
-### White Boy Shuffle
+### The Sellout
 author: Paul Beatty
 ```
 - - -
