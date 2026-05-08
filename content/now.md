@@ -5,6 +5,8 @@ updated: May 2026
 ## Current Project
 
 Thoughtful use of digital tools. Cutting out noise where I am able, selectively adding where it makes sense. Slowing back down. 
+
+Potty training and sleep training at the same time. A good old-fashioned sufferfest. 
 - - -
 
 ## Playing at my house
@@ -27,6 +29,7 @@ author: David Sedaris
 ```
 - - -
 
-## Challenges
+## A link to check out
+[Miyawaki Forrest](https://ambrook.com/offrange/environment/a-forest-in-your-pocket)
 
-Potty training and sleep training at the same time. A good old-fashioned sufferfest. 
+
