@@ -4,7 +4,7 @@ updated: May 2026
 hidden: true
 ---
 ## A poem for you 
-``` 
+
 The Wild Rose
 Sometimes hidden from me
 in daily custom and in trust,
@@ -19,8 +19,8 @@ where yesterday was only a shade,
 and once more I am blessed, choosing
 again what I chose before.
 
-*Wendell Berry
-``` 
+– Wendell Berry, *The Selected Poems of Wendell Berry* 
+
 
 ## A song for you
 ```listening
