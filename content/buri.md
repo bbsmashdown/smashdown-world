@@ -5,6 +5,7 @@ hidden: true
 ---
 ## A poem for you 
 
+
 **The Wild Rose**
 
 Sometimes hidden from me
@@ -22,6 +23,7 @@ again what I chose before.
 
 – Wendell Berry, *The Selected Poems of Wendell Berry* 
 
+- - -
 
 ## A song for you
 ```listening
