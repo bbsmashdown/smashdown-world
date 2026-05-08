@@ -1,11 +1,14 @@
 ---
 title: Recent Projects
-updated: March 2026
+updated: May 2026
 hidden:false
 ---
 # 2026
 ## April
 - [Self-Hosted Audiobooks](/audiobookshelf_changelog.html)
+- Supernote Setup
+	- Yearly Journal Template, Meeting Notes template, 7mm ruled template
+	- Calibre setup, optimized for epub on Supernote
 ## March
 - Aquired **smashdown.org** domain
 	- This website

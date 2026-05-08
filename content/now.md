@@ -1,12 +1,10 @@
 ---
 title: Now
-updated: April 2026
+updated: May 2026
 ---
-## Quote
+## Current Project
 
-> "Hangin' in there like a hair in a biscuit."
-
-   — Boyd Ashdown
+Thoughtful use of digital tools. Cutting out noise where I am able, selectively adding where it makes sense. Slowing back down. 
 - - -
 
 ## Playing at my house
@@ -21,19 +19,14 @@ youtube: https://www.youtube.com/watch?v=z5rRZdiu1UE
 
 ## Reading
 ```reading
-### Vigil
-author: George Saunders
+### The World-Ending Fire
+author: Wendell Berry
 
-### The Sellout
-author: Paul Beatty
+### Let's Explore Diabetes with Owls
+author: David Sedaris
 ```
-- - -
-
-## Motivation
-
-To make it to the next cup of coffee (and/or tea).
 - - -
 
 ## Challenges
 
-Sleep. Paradoxically related to motivation.
+Potty training and sleep training at the same time. A good old-fashioned sufferfest. 
