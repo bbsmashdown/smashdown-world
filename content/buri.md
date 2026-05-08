@@ -5,7 +5,8 @@ hidden: true
 ---
 ## A poem for you 
 
-The Wild Rose
+**The Wild Rose**
+
 Sometimes hidden from me
 in daily custom and in trust,
 so that I live by you unaware
