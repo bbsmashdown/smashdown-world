@@ -1,12 +1,12 @@
 ---
 title: Now
-updated: May 2026
+updated: September 2026
 ---
 ## Current Project
 
 Thoughtful use of digital tools. Cutting out noise where I am able, selectively adding where it makes sense. Slowing back down. 
 
-Potty training and sleep training at the same time. A good old-fashioned sufferfest. 
+Setting boundaries with a(n almost) 3 year old. Fighting fears of dragons and toilets. 
 - - -
 
 ## Playing at my house
@@ -24,8 +24,11 @@ youtube: https://www.youtube.com/watch?v=z5rRZdiu1UE
 ### The World-Ending Fire
 author: Wendell Berry
 
-### Let's Explore Diabetes with Owls
-author: David Sedaris
+### The Place of Tides
+author: James Rebanks
+
+### Iron Gold
+author: Pierce Brown
 ```
 - - -
 
