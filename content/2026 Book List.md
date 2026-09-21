@@ -26,5 +26,6 @@ parent:
 	- *Red Rising*, Pierce Brown
 	- *Goldon Son*, Pierce Brown
 	- *Morning Star*, Pierce Brown
+	- *Iron Gold*, Pierce Brown
 ## Non-Fiction
 - *The Score*, C. Thi Nguyen 

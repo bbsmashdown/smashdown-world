@@ -4,7 +4,7 @@ updated: September 2026
 ---
 ## Current Project
 
-Thoughtful use of digital tools. Cutting out noise where I am able, selectively adding where it makes sense. Slowing back down. 
+Thoughtful use of digital tools. 
 
 Setting boundaries with a(n almost) 3 year old. Fighting fears of dragons and toilets. 
 - - -
@@ -27,7 +27,7 @@ author: Wendell Berry
 ### The Place of Tides
 author: James Rebanks
 
-### Iron Gold
+### Dark Age
 author: Pierce Brown
 ```
 - - -
