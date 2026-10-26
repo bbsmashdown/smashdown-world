@@ -1,21 +1,21 @@
 ---
 title: Now
-updated: September 2026
+updated: October 2026
 ---
 ## Current Project
 
 Thoughtful use of digital tools. 
 
-Setting boundaries with a(n almost) 3 year old. Fighting fears of dragons and toilets. 
+Setting boundaries with a 3 year old. Fighting fears of dragons and toilets. Learning to walk with a 1 year old. 
 - - -
 
 ## Playing at my house
 
 ```listening
-artist: Beastie Boys
-track: Sabotage
-album: Ill Communication, 1994
-youtube: https://www.youtube.com/watch?v=z5rRZdiu1UE
+artist: Russian Circles
+track: Empath
+album: Nine, 2026
+youtube: https://www.youtube.com/watch?v=qrb64_QFetU
 ```
 - - -
 
@@ -24,11 +24,14 @@ youtube: https://www.youtube.com/watch?v=z5rRZdiu1UE
 ### The World-Ending Fire
 author: Wendell Berry
 
+### So Far, So Good
+author: Brendan Leonard
+
 ### The Place of Tides
 author: James Rebanks
 
-### Dark Age
-author: Pierce Brown
+### Not Till We Are Lost
+author: Dennis E. Taylor
 ```
 - - -
 

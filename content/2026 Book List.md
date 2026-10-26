@@ -1,6 +1,6 @@
 ---
 title: 2026 Book List
-updated: September 2026
+updated: October 2026
 hidden: false
 parent: 
 ---
@@ -27,5 +27,7 @@ parent:
 	- *Goldon Son*, Pierce Brown
 	- *Morning Star*, Pierce Brown
 	- *Iron Gold*, Pierce Brown
+	- *Dark Age*, Pierce Brown
+	- *Light Bringer*, Pierce Brown
 ## Non-Fiction
 - *The Score*, C. Thi Nguyen 
