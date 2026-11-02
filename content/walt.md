@@ -1,6 +1,8 @@
 ---
 title: walt
 updated: March 2026
+hidden: false
+parent: 
 ---
 # 51
 
