@@ -1,12 +1,12 @@
 ---
 title: Now
-updated: October 2026
+updated: November 2026
 ---
 ## Current Project
 
 Thoughtful use of digital tools. 
 
-Setting boundaries with a 3 year old. Fighting fears of dragons and toilets. Learning to walk with a 1 year old. 
+Setting boundaries with a 3 year old. An endurance test unlike any I’ve yet attempted. “No, you cannot bring ‘one-more’ dead leaf into the car,” I said. The boring, shoe crumpled brown kind. Learning to walk with a 1 year old. 
 - - -
 
 ## Playing at my house
@@ -21,17 +21,14 @@ youtube: https://www.youtube.com/watch?v=qrb64_QFetU
 
 ## Reading
 ```reading
-### The World-Ending Fire
-author: Wendell Berry
+### Cool Machine
+author: Colson Whitehead
 
 ### So Far, So Good
 author: Brendan Leonard
 
 ### The Place of Tides
 author: James Rebanks
-
-### Not Till We Are Lost
-author: Dennis E. Taylor
 ```
 - - -
 

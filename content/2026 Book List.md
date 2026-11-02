@@ -29,5 +29,7 @@ parent:
 	- *Iron Gold*, Pierce Brown
 	- *Dark Age*, Pierce Brown
 	- *Light Bringer*, Pierce Brown
+- *Not Till We Are Lost*, Dennis E. Taylor
+- *The Infinite Extent*, Dennis E. Taylor
 ## Non-Fiction
 - *The Score*, C. Thi Nguyen 
