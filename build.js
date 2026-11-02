@@ -217,7 +217,7 @@ function buildNav(files, currentPage) {
   const dropdownItems = pages
     .filter(p => p.name !== 'now')
     .map(p => `<a href="/${p.name}.html" class="dropdown-item${currentPage === p.name ? ' active' : ''}">${p.title.toLowerCase()}</a>`)
-    .join('\n          ');
+    .join('\n          ') + '\n          <a href="https://food.smashdown.org" class="dropdown-item">meal planner</a>';
 
   const nowActive = currentPage === 'now' ? ' active' : '';
 
@@ -297,7 +297,7 @@ function buildIndex(allFiles) {
   const dropdownItems = pages
     .filter(p => p.name !== 'now')
     .map(p => `<a href="/${p.name}.html" class="dropdown-item">${p.title.toLowerCase()}</a>`)
-    .join('\n          ');
+    .join('\n          ') + '\n          <a href="https://food.smashdown.org" class="dropdown-item">meal planner</a>';
 
   let navHtml;
   if (pages.length <= 1 || dropdownItems === '') {
