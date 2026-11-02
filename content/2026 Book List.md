@@ -1,6 +1,6 @@
 ---
 title: 2026 Book List
-updated: October 2026
+updated: November 2026
 hidden: false
 parent: 
 ---
